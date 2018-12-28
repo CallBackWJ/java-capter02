@@ -13,7 +13,7 @@ public class TestLog extends TestCase {
 	}
 	public TestLog(String name)
 	{
-		super(name);
+		super(name); 
 	}
 	
 	protected void setUp() throws Exception
