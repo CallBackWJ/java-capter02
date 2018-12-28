@@ -48,8 +48,9 @@ public class TestLog extends TestCase {
 	}
 	
 	
-	private void checkMessagesFlowToLog(int i) throws Exception{
+	private void checkMessagesFlowToLog(int queued) throws Exception{
 		// TODO Auto-generated method stub
+		
 		
 	}
 	private void pause() {

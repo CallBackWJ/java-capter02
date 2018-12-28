@@ -10,6 +10,9 @@ public class MainApp {
 		p1.setY(200);
 		
 		p1.show();
+		
+		Point p2=new Point(50,50);
+		p2.show();
 	}
 
 }
