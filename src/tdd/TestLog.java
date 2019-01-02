@@ -2,14 +2,13 @@ package tdd;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
-
 public class TestLog extends TestCase {
 
 	private AsynchronousLogger logger;
 	private int messagesLogged;
 	public static void main(String[] args)
 	{
-		TestRunner.main(new String[]{"TestLog"});
+		TestRunner.main(new String[]{"tdd.TestLog"});
 	}
 	public TestLog(String name)
 	{
@@ -49,13 +48,17 @@ public class TestLog extends TestCase {
 	
 	
 	private void checkMessagesFlowToLog(int queued) throws Exception{
-		// TODO Auto-generated method stub
-		
-		
+		checkQueuedAndLogged(queued,messagesLogged);
+		pause();
+		messagesLogged+=queued;
+		checkQueuedAndLogged(0, messagesLogged);
 	}
-	private void pause() {
-		// TODO Auto-generated method stub
-		
+	private void checkQueuedAndLogged(int queued, int logged) {
+		assertEquals(queued, logger.messagesInQueue());
+		assertEquals(logged, logger.messagesLogged());
+	}
+	private void pause() throws Exception {
+		Thread.sleep(50);
 	}
 	
 	

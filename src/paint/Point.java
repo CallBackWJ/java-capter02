@@ -30,6 +30,7 @@ public class Point {
 		this.y = y;
 	}
 
+	
 	public void show() {
 		System.out.println("점 [ X=" + x + ", Y=" + y + " ]을 그렸습니다.");
 	}
