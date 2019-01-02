@@ -26,12 +26,14 @@ public class TV {
 	public void channel(int channel) {
 		if (power)
 		{
-			if (channel <= MAX_CHANNEL && channel >= 0){
-				this.channel = channel;
-			}else
+			if (channel > MAX_CHANNEL)
 			{
-				this.channel = channel < 0 ? MAX_CHANNEL : 0;
+				channel = 0;
+			}else if(channel< 0)
+			{
+				channel =50;
 			}
+			this.channel=channel;
 		}
 	}
 
@@ -43,12 +45,16 @@ public class TV {
 	}
 
 	public void volume(int volume) {
-		if (power) {
-			if (volume <= MAX_VOLUME && volume >= 0) {
-				this.volume = volume;
-			} else {
-				this.volume = volume < 0 ? MAX_VOLUME : 0;
+		if (power)
+		{
+			if (volume > MAX_VOLUME)
+			{
+				volume = 0;
+			}else if(volume< 0)
+			{
+				volume =50;
 			}
+			this.volume=volume;
 		}
 	}
 
