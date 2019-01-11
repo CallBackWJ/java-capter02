@@ -50,6 +50,16 @@ public class TCPServer {
 					}
 					String data = new String(buffer, 0, readByteCount, "UTF-8");
 					System.out.println("[server]received data:" + data);
+					
+					
+					
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
 					os.write(data.getBytes("UTF-8"));
 				}
 			} catch (SocketException e) {
