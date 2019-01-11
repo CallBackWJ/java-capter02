@@ -6,7 +6,8 @@ import java.net.DatagramSocket;
 import java.net.InetSocketAddress;
 import java.util.Scanner;
 
-public class UDPEchoClient {
+public class UDPTimeClient {
+
 	private static final String SERVER_IP = "192.168.0.70";
 	private static final int SERVER_PORT = 5000;
 	public static final int BUFFER_SIZE = 1024;
@@ -23,7 +24,7 @@ public class UDPEchoClient {
 
 			while (true) {
 				// 3. 사용자입력 받음
-				System.out.print(">>");
+				System.out.print("[enter]");
 				String message = sc.nextLine();
 				if ("quit".equals(message)) {break;}
 				// 메세지 전송

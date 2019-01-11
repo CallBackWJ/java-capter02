@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.SocketException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class UDPEchoServer {
+public class UDPTimeServer {
 	public static final int PORT = 5000; 
 	public static final int BUFFER_SIZE = 1024;
 
@@ -26,7 +28,12 @@ public class UDPEchoServer {
 			System.out.println("[Server]recevied:"+messge);
 			
 			//데이터 전송
-			byte[] sendData=messge.getBytes("UTF-8");
+			
+			SimpleDateFormat format = new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss a" );
+			String data = format.format( new Date() );
+
+			
+			byte[] sendData=data.getBytes("UTF-8");
 			sendPackit=new DatagramPacket(sendData, sendData.length,receivePackit.getAddress(),receivePackit.getPort());
 			socket.send(sendPackit);
 			
