@@ -32,7 +32,6 @@ public class UDPTimeServer {
 			SimpleDateFormat format = new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss a" );
 			String data = format.format( new Date() );
 
-			
 			byte[] sendData=data.getBytes("UTF-8");
 			sendPackit=new DatagramPacket(sendData, sendData.length,receivePackit.getAddress(),receivePackit.getPort());
 			socket.send(sendPackit);
